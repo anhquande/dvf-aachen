@@ -1,0 +1,23 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="copyright">
+      &copy; {{ now.Year }}
+      <a href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+      – Alle Texte, Bilder und Filme auf dieser Internetpräsenz, sowie die grafische Gestaltung sind urheberrechtlich geschützt. Das Kopieren und die Verwendung dieser Daten sind nur mit der Genehmigung des jeweiligen Rechteinhabers verbunden.
+    </p>
+    <ul class="footer-links">
+      {{ range .Site.Menus.footer }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</footer>
+<script>
+document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+  const nav = document.querySelector('.main-nav');
+  const expanded = this.getAttribute('aria-expanded') === 'true';
+  this.setAttribute('aria-expanded', !expanded);
+  nav.classList.toggle('open');
+  this.classList.toggle('active');
+});
+</script>

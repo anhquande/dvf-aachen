@@ -1,0 +1,41 @@
+{{ define "main" }}
+<article class="page-list container">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="page-content">
+    {{ .Content }}
+  </div>
+  {{ $tag := .Params.tag_filter }}
+  {{ $aktivitaeten := .Site.GetPage "/aktivitaeten" }}
+  {{ $posts := where $aktivitaeten.Pages ".Params.tags" "intersect" (slice $tag) }}
+  {{ if $posts }}
+  <div class="post-list">
+    {{ range $posts.ByDate.Reverse }}
+    {{ $post := . }}
+    <article class="post-item{{ with .Params.image }} has-thumb{{ end }}">
+      {{ with .Params.image }}
+      <div class="post-thumb">
+        <a href="{{ $post.RelPermalink }}"><img src="{{ . | relURL }}" alt="{{ $post.Title }}"></a>
+      </div>
+      {{ end }}
+      <div class="post-body">
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        {{ if .Date }}
+        <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "02.01.2006" }}
+        </time>
+        {{ end }}
+        {{ with .Summary }}
+          <p class="post-excerpt">{{ . }}</p>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" class="read-more">Weiterlesen &raquo;</a>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+  {{ else }}
+  <p>Keine Beiträge in dieser Kategorie.</p>
+  {{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,97 @@
+baseURL = "https://dvf-aachen.de/"
+locale = "de"
+title = "Deutsch-Vietnamesischer Freundeskreis e.V."
+
+[params]
+  description = "DVF Aachen – Deutsch-Vietnamesischer Freundeskreis e.V."
+  author = "DVF Aachen"
+  logo = "/images/logo.png"
+  iban = "DE36 3905 0000 1070 3874 67"
+  bic = "AACSDE33XXX"
+  bank = "SPARKASSE AACHEN"
+
+[menus]
+  [[menus.main]]
+    name = "Startseite"
+    url = "/"
+    weight = 1
+  [[menus.main]]
+    name = "Termine"
+    url = "/termine/"
+    weight = 2
+  [[menus.main]]
+    identifier = "aktivitaeten"
+    name = "Aktivitäten"
+    url = "/aktivitaeten/"
+    weight = 3
+  [[menus.main]]
+    name = "Duy Thu Projekt"
+    url = "/aktivitaeten/duy-thu-projekt/"
+    parent = "aktivitaeten"
+    weight = 1
+  [[menus.main]]
+    name = "Tet Fest"
+    url = "/aktivitaeten/tet/"
+    parent = "aktivitaeten"
+    weight = 2
+  [[menus.main]]
+    name = "Mondfest"
+    url = "/aktivitaeten/mondfest/"
+    parent = "aktivitaeten"
+    weight = 3
+  [[menus.main]]
+    name = "Weihnachtsfest"
+    url = "/aktivitaeten/weihnacht/"
+    parent = "aktivitaeten"
+    weight = 4
+  [[menus.main]]
+    name = "Tag der Integration"
+    url = "/aktivitaeten/tag-der-integration/"
+    parent = "aktivitaeten"
+    weight = 5
+  [[menus.main]]
+    name = "Andere Aktivitäten"
+    url = "/aktivitaeten/andere/"
+    parent = "aktivitaeten"
+    weight = 6
+  [[menus.main]]
+    identifier = "der-verein"
+    name = "Der Verein"
+    url = "/der-verein/"
+    weight = 4
+  [[menus.main]]
+    name = "Wir über uns"
+    url = "/der-verein/vorstand/"
+    parent = "der-verein"
+    weight = 1
+  [[menus.main]]
+    name = "Hintergrund der Vereinsgründung"
+    url = "/der-verein/hintergrund/"
+    parent = "der-verein"
+    weight = 2
+  [[menus.main]]
+    name = "Kontakt"
+    url = "/der-verein/kontakt/"
+    parent = "der-verein"
+    weight = 3
+  [[menus.main]]
+    name = "Sponsor"
+    url = "/sponsor/"
+    weight = 5
+
+  [[menus.footer]]
+    name = "Datenschutzerklärung"
+    url = "/datenschutz/"
+    weight = 1
+  [[menus.footer]]
+    name = "Impressum"
+    url = "/impressum/"
+    weight = 2
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[pagination]
+  pagerSize = 10
