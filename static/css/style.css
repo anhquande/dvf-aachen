@@ -394,17 +394,15 @@ img {
 
 .featured-image {
   margin-bottom: 24px;
-  border-radius: var(--radius);
-  overflow: hidden;
   margin-left: calc(var(--gutter) * -1);
   margin-right: calc(var(--gutter) * -1);
-  border-radius: 0;
+  background: var(--color-surface);
 }
 
 .featured-image img {
   width: 100%;
-  max-height: 300px;
-  object-fit: cover;
+  max-height: 400px;
+  object-fit: contain;
 }
 
 .page-content {
@@ -747,10 +745,11 @@ img {
     margin-left: 0;
     margin-right: 0;
     border-radius: var(--radius);
+    overflow: hidden;
   }
 
   .featured-image img {
-    max-height: 400px;
+    max-height: 480px;
   }
 
   .page-content img {
