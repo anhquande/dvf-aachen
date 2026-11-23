@@ -2,7 +2,7 @@
 title: "Đêm Thu – Karaoke 2025"
 date: 2025-11-06
 tags: ["andere"]
-image: "/images/uploads/2025/11/Karaoke-Einladung-2025.png"
+image: "images/uploads/2025/11/Karaoke-Einladung-2025.png"
 ---
 
 Các bạn thân mến!

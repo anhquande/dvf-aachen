@@ -2,7 +2,7 @@
 title: "Einladung zum TETFEST Jahr der Drachen 2024"
 date: 2024-01-30
 tags: ["tet"]
-image: "/images/uploads/2024/01/Einladung-Tet-2024.png"
+image: "images/uploads/2024/01/Einladung-Tet-2024.png"
 ---
 
 Liebe Freunde und Mitglieder des DVF Aachen,

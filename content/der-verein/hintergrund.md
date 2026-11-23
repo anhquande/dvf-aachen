@@ -1,7 +1,7 @@
 ---
 title: "Hintergrund der Vereinsgründung"
 type: "page"
-image: "/images/uploads/2019/12/tran-phu-yPP08FAft7I-unsplash.jpg"
+image: "images/uploads/2019/12/tran-phu-yPP08FAft7I-unsplash.jpg"
 ---
 
 Vietnam – ein kleines Land im Fernost – ist in Europa seit den 60er Jahren durch einen brutalen Krieg bekannt geworden. Die Friedensbewegung sowie Antikriegsaktionen haben in den 70er Jahren in Europa ihren höchsten Punkt erreicht. Gleichzeitig sind mehrere Hilfs- und Solidaritätsorganisationen für die vietnamesische Bevölkerung entstanden.

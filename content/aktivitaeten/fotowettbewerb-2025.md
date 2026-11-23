@@ -2,7 +2,7 @@
 title: "Fotowettbewerb 2025 zum Frühlingsfest"
 date: 2025-04-10
 tags: ["tet"]
-image: "/images/uploads/2025/04/blumen.png"
+image: "images/uploads/2025/04/blumen.png"
 ---
 
 **Wegen geringer Teilnahmezahl mussten wir den Wettbewerb leider absagen.**

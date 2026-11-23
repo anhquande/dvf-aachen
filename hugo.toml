@@ -5,7 +5,7 @@ title = "Deutsch-Vietnamesischer Freundeskreis e.V."
 [params]
   description = "DVF Aachen – Deutsch-Vietnamesischer Freundeskreis e.V."
   author = "DVF Aachen"
-  logo = "/images/logo.png"
+  logo = "images/logo.png"
   iban = "DE36 3905 0000 1070 3874 67"
   bic = "AACSDE33XXX"
   bank = "SPARKASSE AACHEN"

@@ -2,7 +2,7 @@
 title: "Weihnachtsfeier 2025"
 date: 2025-12-09
 tags: ["weihnacht"]
-image: "/images/uploads/2025/12/Weihnachtsfeier2025.png"
+image: "images/uploads/2025/12/Weihnachtsfeier2025.png"
 ---
 
 Thân gửi quý cô chú, anh chị em, các bạn và các cháu thân hữu,

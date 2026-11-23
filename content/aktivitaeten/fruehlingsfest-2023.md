@@ -2,7 +2,7 @@
 title: "Frühlingsfest am 25.03.2023"
 date: 2023-03-09
 tags: ["tet"]
-image: "/images/uploads/2023/03/fruehlingsfest.png"
+image: "images/uploads/2023/03/fruehlingsfest.png"
 ---
 
 Liebe Freunde,

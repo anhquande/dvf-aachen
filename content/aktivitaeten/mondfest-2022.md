@@ -2,7 +2,7 @@
 title: "Tet Trung Thu 2022 – Die Kleinen ganz groß"
 date: 2022-11-06
 tags: ["mondfest"]
-image: "/images/uploads/2022/11/trung-thu-2022-mua-lan-1.jpg"
+image: "images/uploads/2022/11/trung-thu-2022-mua-lan-1.jpg"
 ---
 
 Das traditionelle Mondfest Tet Trung Thu fand als erste Veranstaltung nach der coronabedingten Pause am 15. Oktober 2022 im Jugendcafé Pinu'u statt.

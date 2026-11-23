@@ -2,7 +2,7 @@
 title: "Einladung zum Mondfest – Trung Thu 2023"
 date: 2023-08-30
 tags: ["mondfest"]
-image: "/images/uploads/2023/08/mondfest-einladung-2023.png"
+image: "images/uploads/2023/08/mondfest-einladung-2023.png"
 ---
 
 Liebe Freunde,

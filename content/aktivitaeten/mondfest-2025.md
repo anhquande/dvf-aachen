@@ -2,7 +2,7 @@
 title: "Einladung zum Mondfest – Trung Thu 2025"
 date: 2025-09-29
 tags: ["mondfest"]
-image: "/images/uploads/2025/10/Trung-Thu-2025.png"
+image: "images/uploads/2025/10/Trung-Thu-2025.png"
 ---
 
 Liebe Freunde,

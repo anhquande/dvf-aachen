@@ -2,7 +2,7 @@
 title: "Einladung zum Mondfest – Trung Thu 2026"
 date: 2026-08-19
 tags: ["mondfest"]
-image: "/images/uploads/2026/08/Mondfest-2026.png"
+image: "images/uploads/2026/08/Mondfest-2026.png"
 ---
 
 Liebe Freunde, wir möchten Euch ganz herzlich zu unserem diesjährigen Mondfest – Tết Trung Thu 2026 einladen.
