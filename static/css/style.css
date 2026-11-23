@@ -29,6 +29,50 @@
   --gutter: 16px;
 }
 
+/* ===== BLOWFISH DARK THEME ===== */
+[data-theme="blowfish"] {
+  --color-text: #d1d5db;
+  --color-heading: #f3f4f6;
+  --color-link: #818cf8;
+  --color-link-hover: #a5b4fc;
+  --color-bg: #0a1628;
+  --color-surface: #111d33;
+  --color-muted: #9ca3af;
+  --color-border: #1e2d45;
+  --color-accent: #7c3aed;
+}
+
+[data-theme="blowfish"] .site-header {
+  background: rgba(10, 22, 40, 0.92);
+}
+
+[data-theme="blowfish"] .hero {
+  background-color: #0a1628;
+}
+
+[data-theme="blowfish"] .menu-toggle span {
+  background: var(--color-heading);
+}
+
+[data-theme="blowfish"] .site-title a {
+  color: var(--color-heading);
+}
+
+[data-theme="blowfish"] .post-item h2 a,
+[data-theme="blowfish"] .info-card h3 {
+  color: var(--color-heading);
+}
+
+[data-theme="blowfish"] .info-card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+[data-theme="blowfish"] .sub-menu {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
 /* ===== BASE ===== */
 html {
   scroll-behavior: smooth;
@@ -117,6 +161,36 @@ img {
 
 .site-title a:hover {
   color: var(--color-accent);
+}
+
+/* ===== THEME SWITCHER ===== */
+.theme-toggle {
+  background: none;
+  border: 1.5px solid var(--color-border);
+  border-radius: 50px;
+  padding: 6px 12px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-muted);
+  cursor: pointer;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--color-link);
+  color: var(--color-link);
+}
+
+.theme-toggle .icon {
+  font-size: 14px;
+  line-height: 1;
 }
 
 /* ===== NAV (mobile-first: hidden behind toggle) ===== */
