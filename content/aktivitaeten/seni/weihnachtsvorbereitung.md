@@ -1,5 +1,5 @@
 ---
-title: "Weihnachtsvorbereitung & Weihnachtsmarkt"
+title: "06.12.2026 – Weihnachtsvorbereitung & Weihnachtsmarkt"
 date: 2026-11-24
 tags: ["seni"]
 ---

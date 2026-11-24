@@ -1,5 +1,5 @@
 ---
-title: "Adventskränze basteln"
+title: "22.11.2026 – Adventskränze basteln"
 date: 2026-11-22
 tags: ["seni"]
 ---
