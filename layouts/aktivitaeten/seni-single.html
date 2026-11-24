@@ -1,0 +1,43 @@
+{{ define "main" }}
+<article class="page-seni container">
+  <div class="seni-layout">
+    <div class="seni-main">
+      <header class="page-header">
+        <h1>{{ .Title }}</h1>
+        {{ if .Date }}
+        <time class="page-date" datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "02.01.2006" }}
+        </time>
+        {{ end }}
+      </header>
+      {{ with .Params.image }}
+      <div class="featured-image">
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+      </div>
+      {{ end }}
+      <div class="page-content">
+        {{ .Content }}
+      </div>
+      <a href="{{ .Parent.RelPermalink }}" class="read-more">&larr; Zurück zu SENI</a>
+    </div>
+
+    <aside class="seni-sidebar">
+      <div class="sidebar-inner">
+        <h3>Berichte</h3>
+        {{ $seniSection := .Parent }}
+        {{ $posts := $seniSection.Pages }}
+        {{ if $posts }}
+        <ul class="sidebar-nav">
+          {{ range $posts.ByDate.Reverse }}
+          <li{{ if eq .RelPermalink $.RelPermalink }} class="active"{{ end }}>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ if .Date }}<time>{{ .Date.Format "02.01.2006" }}</time>{{ end }}
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </div>
+    </aside>
+  </div>
+</article>
+{{ end }}

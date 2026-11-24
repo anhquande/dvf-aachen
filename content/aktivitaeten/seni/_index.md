@@ -1,6 +1,8 @@
 ---
 title: "SENI – Vietnamesisch mit Freunden"
 layout: "seni"
+cascade:
+  layout: "seni-single"
 ---
 
 <div id="de"></div>
