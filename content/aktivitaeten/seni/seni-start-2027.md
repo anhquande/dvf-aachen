@@ -1,5 +1,5 @@
 ---
-title: "Erstes Treffen – Adventskränze basteln"
+title: "Adventskränze basteln"
 date: 2026-11-22
 tags: ["seni"]
 ---
