@@ -23,13 +23,13 @@
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         {{ if .Date }}
         <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
-          {{ .Date.Format "02.01.2006" }}
+          {{ .Date.Format "02. January 2006" }}
         </time>
         {{ end }}
         {{ with .Summary }}
           <p class="post-excerpt">{{ . }}</p>
         {{ end }}
-        <a href="{{ .RelPermalink }}" class="read-more">Weiterlesen &raquo;</a>
+        <a href="{{ .RelPermalink }}" class="read-more">Weiterlesen &rarr;</a>
       </div>
     </article>
     {{ end }}

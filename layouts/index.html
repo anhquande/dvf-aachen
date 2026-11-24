@@ -6,7 +6,7 @@
       <p class="hero-subtitle">{{ . }}</p>
     {{ end }}
     {{ with .Params.hero_link }}
-      <a href="{{ . }}" class="hero-btn">Weiterlesen &raquo;</a>
+      <a href="{{ . }}" class="hero-btn">Weiterlesen &rarr;</a>
     {{ end }}
   </div>
 </section>
@@ -17,13 +17,13 @@
     <div class="info-card">
       {{ with .image }}
         <div class="card-image">
-          <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+          <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy">
         </div>
       {{ end }}
       <h3>{{ .title }}</h3>
       <p>{{ .text }}</p>
       {{ with .link }}
-        <a href="{{ . }}" class="btn-outline">Weiterlesen &raquo;</a>
+        <a href="{{ . }}" class="btn-outline">Weiterlesen &rarr;</a>
       {{ end }}
     </div>
     {{ end }}

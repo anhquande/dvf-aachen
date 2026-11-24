@@ -20,4 +20,33 @@ document.querySelector('.menu-toggle')?.addEventListener('click', function() {
   nav.classList.toggle('open');
   this.classList.toggle('active');
 });
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'blowfish' ? 'light' : 'blowfish';
+  document.documentElement.setAttribute('data-theme', next);
+  try { localStorage.setItem('theme', next); } catch(e) {}
+  updateToggleButton(next);
+}
+
+function updateToggleButton(theme) {
+  const btn = document.querySelector('.theme-toggle');
+  if (!btn) return;
+  const icon = btn.querySelector('.icon');
+  const label = btn.querySelector('.label');
+  if (theme === 'blowfish') {
+    icon.textContent = '🌙';
+    label.textContent = 'Blowfish';
+  } else {
+    icon.textContent = '☀️';
+    label.textContent = 'Light';
+  }
+}
+
+(function() {
+  var t = 'light';
+  try { t = localStorage.getItem('theme') || 'light'; } catch(e) {}
+  if (t === 'blowfish') document.documentElement.setAttribute('data-theme', 'blowfish');
+  updateToggleButton(t);
+})();
 </script>
