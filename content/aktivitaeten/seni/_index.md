@@ -9,6 +9,8 @@ cascade:
 
 ## Sprache · Erlebnis · Neugier · Interkulturalität
 
+<img src="../../images/seni-logo.jpeg" alt="SENI Logo" class="seni-logo">
+
 Der DVF stellt **SENI – Vietnamesisch mit Freunden** vor: ein neues Angebot für Familien und Kinder, das das bisherige Modell des Vietnamesischunterrichts ablöst.
 
 Statt eines Unterrichts mit einer Lehrkraft treffen wir uns weiterhin **alle zwei Wochen sonntags von 11:00 bis 13:00 Uhr**. Der Treffpunkt ist meist **An der Schanz 1**. Je nach Aktivität kann der Veranstaltungsort wechseln.
