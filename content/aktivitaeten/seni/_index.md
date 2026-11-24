@@ -1,6 +1,8 @@
 ---
 title: "SENI – Vietnamesisch mit Freunden"
 layout: "seni"
+image: "images/seni-logo.jpeg"
+summary: "Sprache · Erlebnis · Neugier · Interkulturalität – ein neues Angebot für Familien und Kinder."
 cascade:
   layout: "seni-single"
 ---
@@ -9,7 +11,7 @@ cascade:
 
 ## Sprache · Erlebnis · Neugier · Interkulturalität
 
-<img src="../../images/seni-logo.jpeg" alt="SENI Logo" class="seni-logo">
+{{< seni-logo >}}
 
 Der DVF stellt **SENI – Vietnamesisch mit Freunden** vor: ein neues Angebot für Familien und Kinder, das das bisherige Modell des Vietnamesischunterrichts ablöst.
 
