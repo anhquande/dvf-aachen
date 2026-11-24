@@ -1,5 +1,5 @@
 ---
-title: "06.12.2026 – Weihnachtsvorbereitung & Weihnachtsmarkt"
+title: "06.12.2026 – Theaterstück, singen und Weihnachtsmarkt"
 date: 2026-11-24
 tags: ["seni"]
 ---
