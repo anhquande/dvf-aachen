@@ -870,6 +870,14 @@ img {
   color: var(--color-muted);
 }
 
+/* SENI logo */
+.seni-logo {
+  display: block;
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto 16px;
+}
+
 /* SENI page container */
 .page-seni {
   padding: 28px var(--gutter) 48px;
