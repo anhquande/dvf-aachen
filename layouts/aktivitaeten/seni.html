@@ -62,18 +62,20 @@
 
     <aside class="seni-sidebar">
       <div class="sidebar-inner">
-        <h3>Aktivitäten</h3>
+        <h3>Berichte</h3>
+        {{ $sidebarPosts := .Pages }}
+        {{ if $sidebarPosts }}
         <ul class="sidebar-nav">
-          {{ range $.Site.Menus.main }}
-            {{ if eq .Identifier "aktivitaeten" }}
-              {{ range .Children }}
-              <li{{ if eq .URL $.Page.RelPermalink }} class="active"{{ end }}>
-                <a href="{{ .URL }}">{{ .Name }}</a>
-              </li>
-              {{ end }}
-            {{ end }}
+          {{ range $sidebarPosts.ByDate.Reverse }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ if .Date }}<time>{{ .Date.Format "02.01.2006" }}</time>{{ end }}
+          </li>
           {{ end }}
         </ul>
+        {{ else }}
+        <p class="sidebar-empty">Noch keine Beiträge.</p>
+        {{ end }}
       </div>
     </aside>
   </div>
