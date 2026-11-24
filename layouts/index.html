@@ -6,7 +6,7 @@
       <p class="hero-subtitle">{{ . }}</p>
     {{ end }}
     {{ with .Params.hero_link }}
-      <a href="{{ . }}" class="hero-btn">Weiterlesen &rarr;</a>
+      <a href="{{ strings.TrimLeft "/" . | relURL }}" class="hero-btn">Weiterlesen &rarr;</a>
     {{ end }}
   </div>
 </section>
@@ -23,7 +23,7 @@
       <h3>{{ .title }}</h3>
       <p>{{ .text }}</p>
       {{ with .link }}
-        <a href="{{ . }}" class="btn-outline">Weiterlesen &rarr;</a>
+        <a href="{{ strings.TrimLeft "/" . | relURL }}" class="btn-outline">Weiterlesen &rarr;</a>
       {{ end }}
     </div>
     {{ end }}
