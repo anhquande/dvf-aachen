@@ -3,6 +3,8 @@ title: "SENI – Vietnamesisch mit Freunden"
 layout: "seni"
 ---
 
+<div id="de"></div>
+
 ## Sprache · Erlebnis · Neugier · Interkulturalität
 
 Der DVF stellt **SENI – Vietnamesisch mit Freunden** vor: ein neues Angebot für Familien und Kinder, das das bisherige Modell des Vietnamesischunterrichts ablöst.
@@ -20,6 +22,8 @@ Der Name **SENI** ist von der Lotusblume inspiriert, dem Nationalsymbol Vietnams
 **SENI** steht für **Sprache · Erlebnis · Neugier · Interkulturalität**. Der Name verbindet vietnamesische Identität mit Offenheit für Kinder aus vietnamesischen, deutschen und anderen kulturellen Familien. SENI steht für gemeinsames Spielen, Lernen, Gestalten und den Austausch zwischen verschiedenen Kulturen.
 
 ---
+
+<div id="vi"></div>
 
 ## Một hoạt động mới dành cho các gia đình
 

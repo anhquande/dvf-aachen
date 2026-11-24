@@ -2,51 +2,98 @@
 <article class="page-seni container">
   <header class="page-header">
     <h1>{{ .Title }}</h1>
+    <nav class="lang-tabs" aria-label="Sprache wählen">
+      <a href="#de" class="lang-tab active" data-lang="de">Deutsch</a>
+      <a href="#vi" class="lang-tab" data-lang="vi">Tiếng Việt</a>
+    </nav>
   </header>
 
-  <div class="page-content">
-    {{ .Content }}
-  </div>
+  <div class="seni-layout">
+    <div class="seni-main">
+      <div class="page-content">
+        {{ .Content }}
+      </div>
 
-  <div class="seni-schedule">
-    <h2>Termine / Lịch sinh hoạt</h2>
-    <p><strong>Alle zwei Wochen sonntags, 11:00 – 13:00 Uhr</strong><br>
-    An der Schanz 1, Aachen (Änderungen je nach Aktivität möglich)</p>
-  </div>
+      <div class="seni-schedule">
+        <h2>Termine / Lịch sinh hoạt</h2>
+        <p><strong>Alle zwei Wochen sonntags, 11:00 – 13:00 Uhr</strong><br>
+        An der Schanz 1, Aachen (Änderungen je nach Aktivität möglich)</p>
+      </div>
 
-  <div class="seni-cta">
-    <a href="#" class="btn-cta">Jetzt anmelden / Đăng ký tại đây</a>
-  </div>
+      <div class="seni-cta">
+        <a href="#" class="btn-cta">Jetzt anmelden / Đăng ký tại đây</a>
+      </div>
 
-  {{ $posts := .Pages }}
-  {{ if $posts }}
-  <section class="seni-posts">
-    <h2>Berichte & Ankündigungen</h2>
-    <div class="post-list">
-      {{ range $posts.ByDate.Reverse }}
-      {{ $post := . }}
-      <article class="post-item{{ with .Params.image }} has-thumb{{ end }}">
-        {{ with .Params.image }}
-        <div class="post-thumb">
-          <a href="{{ $post.RelPermalink }}"><img src="{{ . | relURL }}" alt="{{ $post.Title }}" loading="lazy"></a>
-        </div>
-        {{ end }}
-        <div class="post-body">
-          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          {{ if .Date }}
-          <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
-            {{ .Date.Format "02. January 2006" }}
-          </time>
+      {{ $posts := .Pages }}
+      {{ if $posts }}
+      <section class="seni-posts">
+        <h2>Berichte &amp; Ankündigungen</h2>
+        <div class="post-list">
+          {{ range $posts.ByDate.Reverse }}
+          {{ $post := . }}
+          <article class="post-item has-thumb">
+            <div class="post-thumb">
+              <a href="{{ $post.RelPermalink }}">
+                {{ with .Params.image }}
+                  <img src="{{ . | relURL }}" alt="{{ $post.Title }}" loading="lazy">
+                {{ else }}
+                  <div class="thumb-placeholder"><span>{{ substr .Title 0 1 }}</span></div>
+                {{ end }}
+              </a>
+            </div>
+            <div class="post-body">
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              {{ if .Date }}
+              <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "02. January 2006" }}
+              </time>
+              {{ end }}
+              {{ with .Summary }}
+                <p class="post-excerpt">{{ . }}</p>
+              {{ end }}
+              <a href="{{ .RelPermalink }}" class="read-more">Weiterlesen &rarr;</a>
+            </div>
+          </article>
           {{ end }}
-          {{ with .Summary }}
-            <p class="post-excerpt">{{ . }}</p>
-          {{ end }}
-          <a href="{{ .RelPermalink }}" class="read-more">Weiterlesen &rarr;</a>
         </div>
-      </article>
+      </section>
       {{ end }}
     </div>
-  </section>
-  {{ end }}
+
+    <aside class="seni-sidebar">
+      <div class="sidebar-inner">
+        <h3>Aktivitäten</h3>
+        <ul class="sidebar-nav">
+          {{ range $.Site.Menus.main }}
+            {{ if eq .Identifier "aktivitaeten" }}
+              {{ range .Children }}
+              <li{{ if eq .URL $.Page.RelPermalink }} class="active"{{ end }}>
+                <a href="{{ .URL }}">{{ .Name }}</a>
+              </li>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+    </aside>
+  </div>
 </article>
+
+<script>
+(function() {
+  var tabs = document.querySelectorAll('.lang-tab');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function(e) {
+      e.preventDefault();
+      var lang = this.getAttribute('data-lang');
+      var target = document.getElementById(lang);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+})();
+</script>
 {{ end }}

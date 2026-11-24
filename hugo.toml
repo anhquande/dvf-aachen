@@ -25,33 +25,33 @@ title = "Deutsch-Vietnamesischer Freundeskreis e.V."
     url = "/aktivitaeten/"
     weight = 3
   [[menus.main]]
+    name = "SENI"
+    url = "/aktivitaeten/seni/"
+    parent = "aktivitaeten"
+    weight = 1
+  [[menus.main]]
     name = "Duy Thu Projekt"
     url = "/aktivitaeten/duy-thu-projekt/"
     parent = "aktivitaeten"
-    weight = 1
+    weight = 2
   [[menus.main]]
     name = "Tet Fest"
     url = "/aktivitaeten/tet/"
     parent = "aktivitaeten"
-    weight = 2
+    weight = 3
   [[menus.main]]
     name = "Mondfest"
     url = "/aktivitaeten/mondfest/"
     parent = "aktivitaeten"
-    weight = 3
+    weight = 4
   [[menus.main]]
     name = "Weihnachtsfest"
     url = "/aktivitaeten/weihnacht/"
     parent = "aktivitaeten"
-    weight = 4
+    weight = 5
   [[menus.main]]
     name = "Tag der Integration"
     url = "/aktivitaeten/tag-der-integration/"
-    parent = "aktivitaeten"
-    weight = 5
-  [[menus.main]]
-    name = "SENI"
-    url = "/aktivitaeten/seni/"
     parent = "aktivitaeten"
     weight = 6
   [[menus.main]]

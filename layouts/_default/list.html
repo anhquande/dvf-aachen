@@ -13,12 +13,16 @@
   <div class="post-list">
     {{ range $pages }}
     {{ $post := . }}
-    <article class="post-item{{ with .Params.image }} has-thumb{{ end }}">
-      {{ with .Params.image }}
+    <article class="post-item has-thumb">
       <div class="post-thumb">
-        <a href="{{ $post.RelPermalink }}"><img src="{{ . | relURL }}" alt="{{ $post.Title }}" loading="lazy"></a>
+        <a href="{{ $post.RelPermalink }}">
+          {{ with .Params.image }}
+            <img src="{{ . | relURL }}" alt="{{ $post.Title }}" loading="lazy">
+          {{ else }}
+            <div class="thumb-placeholder"><span>{{ substr .Title 0 1 }}</span></div>
+          {{ end }}
+        </a>
       </div>
-      {{ end }}
       <div class="post-body">
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         {{ if .Date }}
