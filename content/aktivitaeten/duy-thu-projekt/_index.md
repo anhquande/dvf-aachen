@@ -1,8 +1,11 @@
 ---
 title: "Duy Thu Projekt"
-type: "page"
+layout: "activity-section"
 image: "images/uploads/2025/01/WhatsApp-Image-2025-01-28-at-10.58.58-2.jpeg"
+summary: "Hilfe, die ankommt – Schulbildung für Kinder in Vietnam ermöglichen."
 ---
+
+## Hilfe, die ankommt
 
 Alle Kinder, die in Deutschland leben, müssen die Schule besuchen. Die Schulpflicht in Deutschland ist unabhängig von sozialer, nationaler Herkunft, körperlicher und geistiger Entwicklung. Anders ausgedrückt: Schulpflicht ist das Recht eines jeden Kindes auf Schule.
 

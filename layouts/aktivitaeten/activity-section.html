@@ -1,0 +1,77 @@
+{{ define "main" }}
+<article class="page-seni container">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+
+  <div class="seni-layout">
+    <div class="seni-main">
+      {{ with .Content }}
+      <div class="page-content">
+        {{ . }}
+      </div>
+      {{ end }}
+
+      {{/* Collect posts: child pages first, then tagged posts from parent */}}
+      {{ $tag := .Params.tag_filter | default "" }}
+      {{ $posts := .Pages }}
+      {{ if and (not $posts) $tag }}
+        {{ $aktivitaeten := site.GetPage "/aktivitaeten" }}
+        {{ $posts = where $aktivitaeten.Pages ".Params.tags" "intersect" (slice $tag) }}
+      {{ end }}
+
+      {{ if $posts }}
+      <section class="seni-posts">
+        <h2>Berichte &amp; Ankündigungen</h2>
+        <div class="post-list">
+          {{ range $posts.ByDate.Reverse }}
+          {{ $post := . }}
+          <article class="post-item has-thumb">
+            <div class="post-thumb">
+              <a href="{{ $post.RelPermalink }}">
+                {{ with .Params.image }}
+                  <img src="{{ . | relURL }}" alt="{{ $post.Title }}" loading="lazy">
+                {{ else }}
+                  <div class="thumb-placeholder"><span>{{ substr .Title 0 1 }}</span></div>
+                {{ end }}
+              </a>
+            </div>
+            <div class="post-body">
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              {{ if .Date }}
+              <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "02. January 2006" }}
+              </time>
+              {{ end }}
+              {{ with .Summary }}
+                <p class="post-excerpt">{{ . }}</p>
+              {{ end }}
+              <a href="{{ .RelPermalink }}" class="read-more">Weiterlesen &rarr;</a>
+            </div>
+          </article>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+    </div>
+
+    <aside class="seni-sidebar">
+      <div class="sidebar-inner">
+        <h3>Berichte</h3>
+        {{ if $posts }}
+        <ul class="sidebar-nav">
+          {{ range $posts.ByDate.Reverse }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ if .Date }}<time>{{ .Date.Format "02.01.2006" }}</time>{{ end }}
+          </li>
+          {{ end }}
+        </ul>
+        {{ else }}
+        <p class="sidebar-empty">Noch keine Beiträge.</p>
+        {{ end }}
+      </div>
+    </aside>
+  </div>
+</article>
+{{ end }}
