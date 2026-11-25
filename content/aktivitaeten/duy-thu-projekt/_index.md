@@ -1,6 +1,7 @@
 ---
 title: "Duy Thu Projekt"
 layout: "activity-section"
+tag_filter: "duy-thu"
 image: "images/uploads/2025/01/WhatsApp-Image-2025-01-28-at-10.58.58-2.jpeg"
 summary: "Hilfe, die ankommt – Schulbildung für Kinder in Vietnam ermöglichen."
 ---
