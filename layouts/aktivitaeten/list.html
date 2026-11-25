@@ -1,0 +1,74 @@
+{{ define "main" }}
+<article class="page-list container">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  {{ with .Content }}
+  <div class="page-content">
+    {{ . }}
+  </div>
+  {{ end }}
+
+  {{ $aktivitaeten := . }}
+  <div class="activity-grid">
+    {{ range .Site.Menus.main }}
+      {{ if eq .Identifier "aktivitaeten" }}
+        {{ range .Children }}
+          {{ $menuItem := . }}
+          {{ $image := "" }}
+          {{ $url := $menuItem.URL }}
+
+          {{/* Try to find the page via sections */}}
+          {{ range $aktivitaeten.Sections }}
+            {{ if eq .RelPermalink $url }}
+              {{ with .Params.image }}
+                {{ $image = . }}
+              {{ end }}
+              {{ if not $image }}
+                {{ with .Params.tag_filter }}
+                  {{ $tag := . }}
+                  {{ $posts := where $aktivitaeten.Pages ".Params.tags" "intersect" (slice $tag) }}
+                  {{ range first 1 $posts.ByDate.Reverse }}
+                    {{ with .Params.image }}
+                      {{ $image = . }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              {{ if not $image }}
+                {{ range first 1 .Pages.ByDate.Reverse }}
+                  {{ with .Params.image }}
+                    {{ $image = . }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+
+          {{/* Try regular pages (standalone like duy-thu-projekt) */}}
+          {{ if not $image }}
+            {{ range $aktivitaeten.RegularPages }}
+              {{ if eq .RelPermalink $url }}
+                {{ with .Params.image }}
+                  {{ $image = . }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+
+          <a href="{{ $url }}" class="activity-card">
+            <div class="activity-card-image">
+              {{ if $image }}
+                <img src="{{ $image | relURL }}" alt="{{ $menuItem.Name }}" loading="lazy">
+              {{ else }}
+                <div class="thumb-placeholder"><span>{{ substr $menuItem.Name 0 1 }}</span></div>
+              {{ end }}
+            </div>
+            <h2 class="activity-card-title">{{ $menuItem.Name }}</h2>
+          </a>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </div>
+</article>
+{{ end }}
