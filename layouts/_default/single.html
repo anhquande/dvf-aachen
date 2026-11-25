@@ -21,5 +21,16 @@
   <div class="page-content">
     {{ .Content }}
   </div>
+  {{ with .Params.tags }}
+    {{ $tag := index . 0 }}
+    {{ $aktivitaeten := site.GetPage "/aktivitaeten" }}
+    {{ range $aktivitaeten.Sections }}
+      {{ if eq (.Params.tag_filter | default "") $tag }}
+  <nav class="post-back">
+    <a href="{{ .RelPermalink }}" class="btn-outline">&larr; Zurück zu {{ .Title }}</a>
+  </nav>
+      {{ end }}
+    {{ end }}
+  {{ end }}
 </article>
 {{ end }}
