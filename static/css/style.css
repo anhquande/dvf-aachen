@@ -661,6 +661,9 @@ body.menu-open {
 }
 
 /* ===== TERMINE EVENTS ===== */
+.page-content > .jahr-filter:first-child {
+  margin-top: -16px;
+}
 .jahr-filter {
   display: flex;
   gap: 8px;

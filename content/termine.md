@@ -12,7 +12,7 @@ layout: "single"
 </div>
 
 <section class="termine-jahr" data-year="2027">
-<h2 class="jahr-heading">Termine 2027</h2>
+<h2 class="jahr-heading">2027</h2>
 
 <div class="event-card">
   <div class="event-date" title="Samstag, 27. Februar 2027">
@@ -33,7 +33,7 @@ layout: "single"
 </section>
 
 <section class="termine-jahr" data-year="2026">
-<h2 class="jahr-heading">Termine 2026</h2>
+<h2 class="jahr-heading">2026</h2>
 
 <div class="event-card">
   <div class="event-date" title="Sonntag, 13. Dezember 2026">
@@ -118,7 +118,7 @@ layout: "single"
 </section>
 
 <section class="termine-jahr" data-year="2025">
-<h2 class="jahr-heading">Termine 2025</h2>
+<h2 class="jahr-heading">2025</h2>
 
 <div class="event-card past">
   <div class="event-date" title="Sonntag, 14. Dezember 2025">
