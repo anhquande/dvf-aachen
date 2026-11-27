@@ -279,7 +279,31 @@ layout: "single"
   var month = next.querySelector('.event-month').textContent;
   var weekday = next.querySelector('.event-weekday').textContent;
   var daysUntil = Math.ceil((nextDate - now) / 86400000);
-  var countdown = daysUntil === 0 ? 'Heute!' : daysUntil === 1 ? 'Morgen' : 'in ' + daysUntil + ' Tagen';
+  var countdown;
+  if (daysUntil === 0 && time) {
+    var m = time.textContent.match(/(\d{1,2}):(\d{2})/);
+    if (m) {
+      var eventTime = new Date();
+      eventTime.setHours(parseInt(m[1]), parseInt(m[2]), 0, 0);
+      var realNow = new Date();
+      var diffMs = eventTime - realNow;
+      if (diffMs > 0) {
+        var h = Math.floor(diffMs / 3600000);
+        var min = Math.floor((diffMs % 3600000) / 60000);
+        countdown = h > 0 ? 'in ' + h + ' Std ' + min + ' Min' : 'in ' + min + ' Min';
+      } else {
+        countdown = 'Jetzt!';
+      }
+    } else {
+      countdown = 'Heute!';
+    }
+  } else if (daysUntil === 0) {
+    countdown = 'Heute!';
+  } else if (daysUntil === 1) {
+    countdown = 'Morgen';
+  } else {
+    countdown = 'in ' + daysUntil + ' Tagen';
+  }
   hero.innerHTML =
     '<div class="hero-bar"><span>Nächster Termin</span><span class="hero-countdown">' + countdown + '</span></div>' +
     '<div class="event-card hero-card">' + next.innerHTML + '</div>';
