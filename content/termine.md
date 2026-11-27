@@ -127,7 +127,7 @@ layout: "single"
 <section class="termine-jahr" data-year="2025">
 <h2 class="jahr-heading">2025</h2>
 
-<div class="event-card past" data-date="2025-12-14">
+<div class="event-card" data-date="2025-12-14">
   <div class="event-date" title="Sonntag, 14. Dezember 2025">
     <span class="event-day">14</span>
     <span class="event-month">Dez</span>
@@ -144,7 +144,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past" data-date="2025-11-15">
+<div class="event-card" data-date="2025-11-15">
   <div class="event-date" title="Samstag, 15. November 2025">
     <span class="event-day">15</span>
     <span class="event-month">Nov</span>
@@ -161,7 +161,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past" data-date="2025-10-04">
+<div class="event-card" data-date="2025-10-04">
   <div class="event-date" title="Samstag, 4. Oktober 2025">
     <span class="event-day">04</span>
     <span class="event-month">Okt</span>
@@ -178,7 +178,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past" data-date="2025-09-28">
+<div class="event-card" data-date="2025-09-28">
   <div class="event-date" title="Sonntag, 28. September 2025">
     <span class="event-day">28</span>
     <span class="event-month">Sep</span>
@@ -195,7 +195,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past" data-date="2025-09-07">
+<div class="event-card" data-date="2025-09-07">
   <div class="event-date" title="Sonntag, 7. September 2025">
     <span class="event-day">07</span>
     <span class="event-month">Sep</span>
@@ -212,7 +212,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past" data-date="2025-08-16">
+<div class="event-card" data-date="2025-08-16">
   <div class="event-date" title="Samstag, 16. August 2025">
     <span class="event-day">16</span>
     <span class="event-month">Aug</span>
@@ -229,7 +229,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past" data-date="2025-06-22">
+<div class="event-card" data-date="2025-06-22">
   <div class="event-date" title="Sonntag, 22. Juni 2025">
     <span class="event-day">22</span>
     <span class="event-month">Jun</span>
@@ -246,7 +246,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past" data-date="2025-05-03">
+<div class="event-card" data-date="2025-05-03">
   <div class="event-date" title="Samstag, 3. Mai 2025">
     <span class="event-day">03</span>
     <span class="event-month">Mai</span>
@@ -267,10 +267,15 @@ layout: "single"
 
 <script>
 (function() {
-  var hero = document.getElementById('next-event-hero');
-  if (!hero) return;
   var now = new Date();
   now.setHours(0, 0, 0, 0);
+  document.querySelectorAll('.event-card[data-date]').forEach(function(card) {
+    var d = new Date(card.dataset.date + 'T00:00:00');
+    if (d < now) card.classList.add('past');
+  });
+
+  var hero = document.getElementById('next-event-hero');
+  if (!hero) return;
   var cards = document.querySelectorAll('.event-card[data-date]');
   var next = null;
   var nextDate = null;
