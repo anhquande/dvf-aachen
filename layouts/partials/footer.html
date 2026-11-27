@@ -27,6 +27,17 @@ document.querySelector('.menu-toggle')?.addEventListener('click', function() {
   this.setAttribute('aria-expanded', !expanded);
   nav.classList.toggle('open');
   this.classList.toggle('active');
+  if (!expanded) {
+    var headerH = document.querySelector('.site-header').offsetHeight;
+    nav.style.top = headerH + 'px';
+    document.body.dataset.scrollY = window.scrollY;
+    document.body.classList.add('menu-open');
+    document.body.style.top = '-' + window.scrollY + 'px';
+  } else {
+    document.body.classList.remove('menu-open');
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(document.body.dataset.scrollY || '0'));
+  }
 });
 
 function toggleTheme() {

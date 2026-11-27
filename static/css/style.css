@@ -42,7 +42,7 @@
   --color-accent: #7c3aed;
 }
 
-[data-theme="blowfish"] .site-header {
+[data-theme="blowfish"] .site-header::before {
   background: rgba(10, 22, 40, 0.92);
 }
 
@@ -71,6 +71,10 @@
 [data-theme="blowfish"] .sub-menu {
   background: var(--color-surface);
   border-color: var(--color-border);
+}
+
+[data-theme="blowfish"] .event-date {
+  color: #fff;
 }
 
 /* ===== BASE ===== */
@@ -114,13 +118,19 @@ img {
 
 /* ===== HEADER (mobile-first) ===== */
 .site-header {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 100;
+}
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: -1;
 }
 
 .header-inner {
@@ -252,14 +262,27 @@ img {
 
 .main-nav {
   display: none;
-  width: 100%;
-  order: 3;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg);
+  z-index: 99;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   border-top: 1px solid var(--color-border);
-  margin-top: 10px;
 }
 
 .main-nav.open {
   display: block;
+}
+
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 .nav-list {
@@ -637,33 +660,243 @@ img {
   border-color: var(--color-accent);
 }
 
-/* ===== TERMINE TABLE ===== */
-.termine-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 16px 0 32px;
+/* ===== TERMINE EVENTS ===== */
+.jahr-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.jahr-btn {
+  padding: 6px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.jahr-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+.jahr-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #333;
 }
 
-.termine-table caption {
-  text-align: left;
-  font-size: 18px;
-  font-weight: 600;
+.termine-jahr {
+  margin-bottom: 40px;
+}
+
+.jahr-heading {
+  font-size: 20px;
+  font-weight: 700;
   color: var(--color-heading);
   padding: 12px 0 8px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--color-accent);
   letter-spacing: -0.01em;
+  position: sticky;
+  top: 65px;
+  background: var(--color-bg);
+  z-index: 10;
 }
 
-.termine-table td {
-  padding: 12px 8px;
-  border-bottom: 1px solid var(--color-border);
-  font-size: 14px;
-  vertical-align: top;
+.event-card {
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.event-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.termine-table td:first-child {
-  font-weight: 500;
+.event-card.past {
+  opacity: 0.65;
+}
+
+.event-date {
+  flex-shrink: 0;
+  width: 60px;
+  text-align: center;
+  background: var(--color-accent);
+  color: #333;
+  border-radius: 8px;
+  padding: 8px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  line-height: 1.2;
+  cursor: help;
+}
+
+.event-day {
+  font-size: 22px;
+  font-weight: 700;
+  display: block;
+}
+
+.event-month {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.event-weekday {
+  font-size: 11px;
+  opacity: 0.85;
+  display: block;
+  margin-top: 2px;
+}
+
+.event-date.multi-day {
+  width: 72px;
+}
+
+.event-date.multi-day .event-day {
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.event-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-content .event-title {
+  font-size: 16px;
+  font-weight: 600;
   color: var(--color-heading);
-  white-space: normal;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.event-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-size: 13px;
+  color: var(--color-text-muted, #666);
+}
+
+.event-meta li {
+  white-space: nowrap;
+}
+
+.event-meta a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 2px;
+}
+
+.event-meta a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+.event-desc {
+  font-size: 14px;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.event-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.event-title a::after {
+  content: " \1F517";
+  font-size: 0.7em;
+  opacity: 0.35;
+  transition: opacity 0.2s;
+}
+.event-title a:hover {
+  color: var(--color-accent);
+}
+.event-title a:hover::after {
+  opacity: 1;
+}
+
+/* ===== ACTIVITY EVENT CARDS ===== */
+.activity-events {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-event-card {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.activity-event-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.activity-event-card:hover .event-title {
+  color: var(--color-accent);
+}
+
+.activity-event-date {
+  flex-shrink: 0;
+  width: 56px;
+  text-align: center;
+  background: var(--color-accent);
+  color: #333;
+  border-radius: 8px;
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  line-height: 1.2;
+}
+[data-theme="blowfish"] .activity-event-date {
+  color: #fff;
+}
+
+.activity-event-body {
+  flex: 1;
+  min-width: 0;
+}
+.activity-event-body .event-title {
+  margin: 0 0 4px;
+}
+.activity-event-body .post-date {
+  font-size: 12px;
+  color: var(--color-text-muted, #666);
+}
+.activity-event-body .event-desc {
+  font-size: 13px;
+  margin-top: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ===== KONTAKT FORM ===== */
@@ -1082,9 +1315,16 @@ img {
     max-width: 480px;
   }
 
-  .termine-table td:first-child {
-    white-space: nowrap;
-    width: 200px;
+  .event-date {
+    width: 70px;
+  }
+
+  .event-day {
+    font-size: 24px;
+  }
+
+  .page-content .event-title {
+    font-size: 17px;
   }
 }
 
@@ -1110,10 +1350,13 @@ img {
 
   .main-nav {
     display: flex;
+    position: static;
     width: auto;
     order: 0;
     border-top: none;
     margin-top: 0;
+    overflow-y: visible;
+    background: none;
   }
 
   .nav-list {
@@ -1234,6 +1477,9 @@ img {
   .page-content {
     max-width: 720px;
   }
+  .page-content:has(.event-card) {
+    max-width: none;
+  }
 
   .page-content h2 {
     font-size: 24px;
@@ -1259,13 +1505,26 @@ img {
     max-width: 560px;
   }
 
-  .termine-table td {
-    padding: 14px 16px;
-    font-size: 15px;
+  .event-card {
+    gap: 20px;
+    padding: 20px 0;
   }
 
-  .termine-table td:first-child {
-    width: 220px;
+  .event-date {
+    width: 76px;
+    padding: 10px 6px;
+  }
+
+  .event-day {
+    font-size: 26px;
+  }
+
+  .page-content .event-title {
+    font-size: 18px;
+  }
+
+  .event-desc {
+    font-size: 15px;
   }
 
   .footer-inner {
