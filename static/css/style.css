@@ -697,11 +697,12 @@ body.menu-open {
   font-weight: 700;
   color: var(--color-heading);
   padding: 12px 0 8px;
+  margin-top: -1px;
   margin-bottom: 16px;
   border-bottom: 2px solid var(--color-accent);
   letter-spacing: -0.01em;
   position: sticky;
-  top: 65px;
+  top: 56px;
   background: var(--color-bg);
   z-index: 10;
 }
