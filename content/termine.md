@@ -317,8 +317,9 @@ layout: "single"
   } else {
     countdown = 'in ' + daysUntil + ' Tagen';
   }
+  var label = (countdown === 'Jetzt!') ? 'Aktueller Termin' : 'Nächster Termin';
   hero.innerHTML =
-    '<div class="hero-bar"><span>Nächster Termin</span><span class="hero-countdown">' + countdown + '</span></div>' +
+    '<div class="hero-bar"><span>' + label + '</span><span class="hero-countdown">' + countdown + '</span></div>' +
     '<div class="event-card hero-card">' + next.innerHTML + '</div>';
 })();
 
