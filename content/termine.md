@@ -4,6 +4,8 @@ type: "page"
 layout: "single"
 ---
 
+<div id="next-event-hero"></div>
+
 <div class="jahr-filter">
   <button class="jahr-btn active" data-year="alle">Alle</button>
   <button class="jahr-btn" data-year="2027">2027</button>
@@ -14,7 +16,7 @@ layout: "single"
 <section class="termine-jahr" data-year="2027">
 <h2 class="jahr-heading">2027</h2>
 
-<div class="event-card">
+<div class="event-card" data-date="2027-02-27">
   <div class="event-date" title="Samstag, 27. Februar 2027">
     <span class="event-day">27</span>
     <span class="event-month">Feb</span>
@@ -35,7 +37,7 @@ layout: "single"
 <section class="termine-jahr" data-year="2026">
 <h2 class="jahr-heading">2026</h2>
 
-<div class="event-card">
+<div class="event-card" data-date="2026-12-13">
   <div class="event-date" title="Sonntag, 13. Dezember 2026">
     <span class="event-day">13</span>
     <span class="event-month">Dez</span>
@@ -51,7 +53,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card">
+<div class="event-card" data-date="2026-11-21">
   <div class="event-date" title="Samstag, 21. November 2026">
     <span class="event-day">21</span>
     <span class="event-month">Nov</span>
@@ -67,7 +69,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card">
+<div class="event-card" data-date="2026-09-26">
   <div class="event-date" title="Samstag, 26. September 2026">
     <span class="event-day">26</span>
     <span class="event-month">Sep</span>
@@ -83,7 +85,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card">
+<div class="event-card" data-date="2026-06-12">
   <div class="event-date multi-day" title="Freitag, 12. bis Sonntag, 14. Juni 2026">
     <span class="event-day">12–14</span>
     <span class="event-month">Jun</span>
@@ -99,7 +101,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card">
+<div class="event-card" data-date="2026-02-28">
   <div class="event-date" title="Samstag, 28. Februar 2026">
     <span class="event-day">28</span>
     <span class="event-month">Feb</span>
@@ -120,7 +122,7 @@ layout: "single"
 <section class="termine-jahr" data-year="2025">
 <h2 class="jahr-heading">2025</h2>
 
-<div class="event-card past">
+<div class="event-card past" data-date="2025-12-14">
   <div class="event-date" title="Sonntag, 14. Dezember 2025">
     <span class="event-day">14</span>
     <span class="event-month">Dez</span>
@@ -136,7 +138,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past">
+<div class="event-card past" data-date="2025-11-15">
   <div class="event-date" title="Samstag, 15. November 2025">
     <span class="event-day">15</span>
     <span class="event-month">Nov</span>
@@ -152,7 +154,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past">
+<div class="event-card past" data-date="2025-10-04">
   <div class="event-date" title="Samstag, 4. Oktober 2025">
     <span class="event-day">04</span>
     <span class="event-month">Okt</span>
@@ -168,7 +170,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past">
+<div class="event-card past" data-date="2025-09-28">
   <div class="event-date" title="Sonntag, 28. September 2025">
     <span class="event-day">28</span>
     <span class="event-month">Sep</span>
@@ -184,7 +186,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past">
+<div class="event-card past" data-date="2025-09-07">
   <div class="event-date" title="Sonntag, 7. September 2025">
     <span class="event-day">07</span>
     <span class="event-month">Sep</span>
@@ -200,7 +202,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past">
+<div class="event-card past" data-date="2025-08-16">
   <div class="event-date" title="Samstag, 16. August 2025">
     <span class="event-day">16</span>
     <span class="event-month">Aug</span>
@@ -216,7 +218,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past">
+<div class="event-card past" data-date="2025-06-22">
   <div class="event-date" title="Sonntag, 22. Juni 2025">
     <span class="event-day">22</span>
     <span class="event-month">Jun</span>
@@ -232,7 +234,7 @@ layout: "single"
   </div>
 </div>
 
-<div class="event-card past">
+<div class="event-card past" data-date="2025-05-03">
   <div class="event-date" title="Samstag, 3. Mai 2025">
     <span class="event-day">03</span>
     <span class="event-month">Mai</span>
@@ -251,6 +253,51 @@ layout: "single"
 </section>
 
 <script>
+(function() {
+  var hero = document.getElementById('next-event-hero');
+  if (!hero) return;
+  var now = new Date();
+  now.setHours(0, 0, 0, 0);
+  var cards = document.querySelectorAll('.event-card[data-date]');
+  var next = null;
+  var nextDate = null;
+  cards.forEach(function(card) {
+    var d = new Date(card.dataset.date + 'T00:00:00');
+    if (d >= now && (!nextDate || d < nextDate)) {
+      next = card;
+      nextDate = d;
+    }
+  });
+  if (!next) return;
+  var title = next.querySelector('.event-title').textContent;
+  var link = next.querySelector('.event-title a');
+  var time = next.querySelector('.event-time');
+  var loc = next.querySelector('.event-location');
+  var desc = next.querySelector('.event-desc');
+  var dateEl = next.querySelector('.event-date');
+  var day = next.querySelector('.event-day').textContent;
+  var month = next.querySelector('.event-month').textContent;
+  var weekday = next.querySelector('.event-weekday').textContent;
+  var daysUntil = Math.ceil((nextDate - now) / 86400000);
+  var countdown = daysUntil === 0 ? 'Heute!' : daysUntil === 1 ? 'Morgen' : 'in ' + daysUntil + ' Tagen';
+  hero.innerHTML =
+    '<div class="hero-badge">' + countdown + '</div>' +
+    '<div class="hero-content">' +
+      '<div class="hero-date">' +
+        '<span class="hero-day">' + day + '</span>' +
+        '<span class="hero-month">' + month + '</span>' +
+        '<span class="hero-weekday">' + weekday + '</span>' +
+      '</div>' +
+      '<div class="hero-details">' +
+        '<div class="hero-label">Nächster Termin</div>' +
+        '<h2 class="hero-title">' + (link ? '<a href="' + link.href + '">' + title + '</a>' : title) + '</h2>' +
+        (time ? '<p class="hero-meta">' + time.innerHTML + '</p>' : '') +
+        (loc ? '<p class="hero-meta">' + loc.innerHTML + '</p>' : '') +
+        (desc ? '<p class="hero-desc">' + desc.textContent + '</p>' : '') +
+      '</div>' +
+    '</div>';
+})();
+
 document.querySelector('.jahr-filter').addEventListener('click', function(e) {
   var btn = e.target.closest('.jahr-btn');
   if (!btn) return;
