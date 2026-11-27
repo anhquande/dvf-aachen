@@ -94,7 +94,6 @@ layout: "single"
     <span class="event-day">12–14</span>
     <span class="event-month">Jun</span>
     <span class="event-weekday">Fr–So</span>
-    <span class="event-start-time">Ganzer Tag</span>
   </div>
   <div class="event-details">
     <h3 class="event-title">DVF Kindercamps</h3>
