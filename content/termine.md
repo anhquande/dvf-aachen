@@ -20,8 +20,6 @@ layout: "single"
   <div class="event-date" title="Samstag, 27. Februar 2027">
     <span class="event-day">27</span>
     <span class="event-month">Feb</span>
-    <span class="event-weekday">Sa</span>
-    <span class="event-start-time">17:00</span>
   </div>
   <div class="event-details">
     <h3 class="event-title">Tet – Neujahrsfest</h3>
@@ -42,8 +40,6 @@ layout: "single"
   <div class="event-date" title="Sonntag, 13. Dezember 2026">
     <span class="event-day">13</span>
     <span class="event-month">Dez</span>
-    <span class="event-weekday">So</span>
-    <span class="event-start-time">Ganzer Tag</span>
   </div>
   <div class="event-details">
     <h3 class="event-title">Weihnachtsfeier</h3>
@@ -59,8 +55,6 @@ layout: "single"
   <div class="event-date" title="Samstag, 21. November 2026">
     <span class="event-day">21</span>
     <span class="event-month">Nov</span>
-    <span class="event-weekday">Sa</span>
-    <span class="event-start-time">19:00</span>
   </div>
   <div class="event-details">
     <h3 class="event-title">Karaokeabend</h3>
@@ -76,8 +70,6 @@ layout: "single"
   <div class="event-date" title="Samstag, 26. September 2026">
     <span class="event-day">26</span>
     <span class="event-month">Sep</span>
-    <span class="event-weekday">Sa</span>
-    <span class="event-start-time">15:00</span>
   </div>
   <div class="event-details">
     <h3 class="event-title"><a href="../aktivitaeten/mondfest-2026/">Mondfest – Trung Thu</a></h3>
@@ -93,7 +85,6 @@ layout: "single"
   <div class="event-date multi-day" title="Freitag, 12. bis Sonntag, 14. Juni 2026">
     <span class="event-day">12–14</span>
     <span class="event-month">Jun</span>
-    <span class="event-weekday">Fr–So</span>
   </div>
   <div class="event-details">
     <h3 class="event-title">DVF Kindercamps</h3>
@@ -109,8 +100,6 @@ layout: "single"
   <div class="event-date" title="Samstag, 28. Februar 2026">
     <span class="event-day">28</span>
     <span class="event-month">Feb</span>
-    <span class="event-weekday">Sa</span>
-    <span class="event-start-time">17:00</span>
   </div>
   <div class="event-details">
     <h3 class="event-title"><a href="../aktivitaeten/tet-fest-2026/">Tet-Fest – Bính Ngọ</a></h3>
@@ -131,8 +120,6 @@ layout: "single"
   <div class="event-date" title="Sonntag, 14. Dezember 2025">
     <span class="event-day">14</span>
     <span class="event-month">Dez</span>
-    <span class="event-weekday">So</span>
-    <span class="event-start-time">Ganzer Tag</span>
   </div>
   <div class="event-details">
     <h3 class="event-title"><a href="../aktivitaeten/weihnachtsfeier-2025/">Weihnachtsfeier – Tiệc Giáng Sinh</a></h3>
@@ -148,8 +135,6 @@ layout: "single"
   <div class="event-date" title="Samstag, 15. November 2025">
     <span class="event-day">15</span>
     <span class="event-month">Nov</span>
-    <span class="event-weekday">Sa</span>
-    <span class="event-start-time">19:00</span>
   </div>
   <div class="event-details">
     <h3 class="event-title"><a href="../aktivitaeten/karaoke-2025/">Karaokeabend – Đêm Thu Karaoke</a></h3>
@@ -165,8 +150,6 @@ layout: "single"
   <div class="event-date" title="Samstag, 4. Oktober 2025">
     <span class="event-day">04</span>
     <span class="event-month">Okt</span>
-    <span class="event-weekday">Sa</span>
-    <span class="event-start-time">15:00</span>
   </div>
   <div class="event-details">
     <h3 class="event-title"><a href="../aktivitaeten/mondfest-2025/">Mondfest 2025 – Tết Trung Thu</a></h3>
@@ -182,8 +165,6 @@ layout: "single"
   <div class="event-date" title="Sonntag, 28. September 2025">
     <span class="event-day">28</span>
     <span class="event-month">Sep</span>
-    <span class="event-weekday">So</span>
-    <span class="event-start-time">Ganzer Tag</span>
   </div>
   <div class="event-details">
     <h3 class="event-title"><a href="../aktivitaeten/buchvorstellung-2025/">Kulturstunde – „Deutschland – Ein Wintermärchen"</a></h3>
@@ -199,8 +180,6 @@ layout: "single"
   <div class="event-date" title="Sonntag, 7. September 2025">
     <span class="event-day">07</span>
     <span class="event-month">Sep</span>
-    <span class="event-weekday">So</span>
-    <span class="event-start-time">Ganzer Tag</span>
   </div>
   <div class="event-details">
     <h3 class="event-title">Tag der Kulturen</h3>
@@ -216,8 +195,6 @@ layout: "single"
   <div class="event-date" title="Samstag, 16. August 2025">
     <span class="event-day">16</span>
     <span class="event-month">Aug</span>
-    <span class="event-weekday">Sa</span>
-    <span class="event-start-time">14:00</span>
   </div>
   <div class="event-details">
     <h3 class="event-title">Hauptversammlung und Sommertreff</h3>
@@ -233,8 +210,6 @@ layout: "single"
   <div class="event-date" title="Sonntag, 22. Juni 2025">
     <span class="event-day">22</span>
     <span class="event-month">Jun</span>
-    <span class="event-weekday">So</span>
-    <span class="event-start-time">Ganzer Tag</span>
   </div>
   <div class="event-details">
     <h3 class="event-title">Multikultifest</h3>
@@ -250,8 +225,6 @@ layout: "single"
   <div class="event-date" title="Samstag, 3. Mai 2025">
     <span class="event-day">03</span>
     <span class="event-month">Mai</span>
-    <span class="event-weekday">Sa</span>
-    <span class="event-start-time">15:00</span>
   </div>
   <div class="event-details">
     <h3 class="event-title"><a href="../aktivitaeten/fruehlingsfest-2025/">Frühlingsfest</a></h3>
@@ -295,7 +268,6 @@ layout: "single"
   var dateEl = next.querySelector('.event-date');
   var day = next.querySelector('.event-day').textContent;
   var month = next.querySelector('.event-month').textContent;
-  var weekday = next.querySelector('.event-weekday').textContent;
   var daysUntil = Math.ceil((nextDate - now) / 86400000);
   var countdown;
   if (daysUntil === 0 && time) {

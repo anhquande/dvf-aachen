@@ -808,26 +808,6 @@ body.menu-open {
   color: var(--color-accent);
 }
 
-.event-weekday {
-  font-size: 11px;
-  color: var(--color-muted);
-  opacity: 1;
-  display: block;
-  margin-top: 1px;
-}
-
-.event-start-time {
-  display: block;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  margin-top: 4px;
-  padding-top: 0;
-  border-top: none;
-  width: auto;
-  color: var(--color-muted);
-}
-
 .event-date.multi-day {
   width: 60px;
 }
@@ -1578,10 +1558,6 @@ body.menu-open {
 
   .event-day {
     font-size: 34px;
-  }
-
-  .event-start-time {
-    font-size: 12px;
   }
 
   .page-content .event-title {
