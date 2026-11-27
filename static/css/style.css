@@ -711,93 +711,27 @@ body.menu-open {
 }
 
 #next-event-hero:empty { display: none; }
-#next-event-hero {
-  position: relative;
-  background: linear-gradient(135deg, var(--color-accent), color-mix(in srgb, var(--color-accent) 70%, #000));
-  border-radius: 14px;
-  padding: 24px;
-  margin-bottom: 20px;
-  color: #fff;
-  overflow: hidden;
-}
-.hero-badge {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background: rgba(255,255,255,0.22);
-  color: #fff;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 20px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-.hero-content {
+#next-event-hero { margin-bottom: 20px; }
+.hero-bar {
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-.hero-date {
-  flex-shrink: 0;
-  width: 72px;
-  text-align: center;
-  background: rgba(255,255,255,0.18);
-  border-radius: 10px;
-  padding: 10px 8px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-.hero-day {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1;
-}
-.hero-month {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.hero-weekday {
-  display: block;
-  font-size: 0.78rem;
-  opacity: 0.8;
-  margin-top: 2px;
-}
-.hero-details { flex: 1; min-width: 0; }
-.hero-label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  opacity: 0.8;
-  margin-bottom: 4px;
-}
-.hero-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin: 0 0 8px;
-  line-height: 1.25;
-}
-.hero-title a {
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-accent);
   color: #fff;
-  text-decoration: none;
-}
-.hero-title a:hover { text-decoration: underline; }
-.hero-meta {
+  padding: 8px 16px;
+  border-radius: 10px 10px 0 0;
   font-size: 0.88rem;
-  margin: 2px 0;
+  font-weight: 600;
+}
+.hero-countdown {
+  font-weight: 400;
   opacity: 0.9;
 }
-.hero-meta a { color: #fff; text-decoration: underline; }
-.hero-desc {
-  font-size: 0.88rem;
-  margin: 8px 0 0;
-  opacity: 0.85;
-  line-height: 1.4;
+.hero-card {
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  border-color: var(--color-accent);
+  opacity: 1 !important;
 }
 
 .event-card {

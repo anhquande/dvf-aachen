@@ -281,21 +281,8 @@ layout: "single"
   var daysUntil = Math.ceil((nextDate - now) / 86400000);
   var countdown = daysUntil === 0 ? 'Heute!' : daysUntil === 1 ? 'Morgen' : 'in ' + daysUntil + ' Tagen';
   hero.innerHTML =
-    '<div class="hero-badge">' + countdown + '</div>' +
-    '<div class="hero-content">' +
-      '<div class="hero-date">' +
-        '<span class="hero-day">' + day + '</span>' +
-        '<span class="hero-month">' + month + '</span>' +
-        '<span class="hero-weekday">' + weekday + '</span>' +
-      '</div>' +
-      '<div class="hero-details">' +
-        '<div class="hero-label">Nächster Termin</div>' +
-        '<h2 class="hero-title">' + (link ? '<a href="' + link.href + '">' + title + '</a>' : title) + '</h2>' +
-        (time ? '<p class="hero-meta">' + time.innerHTML + '</p>' : '') +
-        (loc ? '<p class="hero-meta">' + loc.innerHTML + '</p>' : '') +
-        (desc ? '<p class="hero-desc">' + desc.textContent + '</p>' : '') +
-      '</div>' +
-    '</div>';
+    '<div class="hero-bar"><span>Nächster Termin</span><span class="hero-countdown">' + countdown + '</span></div>' +
+    '<div class="event-card hero-card">' + next.innerHTML + '</div>';
 })();
 
 document.querySelector('.jahr-filter').addEventListener('click', function(e) {
